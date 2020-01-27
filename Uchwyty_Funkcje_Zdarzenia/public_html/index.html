@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+
+            function sprawdz()
+            {
+                var liczba = document.getElementById("pole").value;
+                /**document.write(liczba); **/
+                //  if(liczba.toString().length){
+                if (liczba !== "") {
+                    if (liczba > 0) {
+                        document.getElementById("wynik").innerHTML = "dodatnia";
+                        // document.write("dodatnia");  
+                    } else if (liczba < 0) {
+                        document.getElementById("wynik").innerHTML = "ujemna";
+                    } else if (liczba == 0) {
+                        document.getElementById("wynik").innerHTML = "zero";
+                    } else {
+                        document.getElementById("wynik").innerHTML = "to nie jest liczba";
+                    }
+                } else {
+                    document.getElementById("wynik").innerHTML = "Puste pole";
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <input type="text" id="pole" />
+        <input type="submit" value="Sprawdź" onclick="sprawdz()"/>
+
+        <div id="wynik"> </div>
+    </body>
+</html>

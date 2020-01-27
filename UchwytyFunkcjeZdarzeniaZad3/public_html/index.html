@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: #222222;
+                font-size: 24px;
+                color: white;
+            }
+
+        </style>
+        <script src=https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js></script>
+
+        <script type="text/javascript">
+            var numer = Math.floor(Math.random() * 5) + 1;
+            var timer1 = 0;
+            var timer2 = 0;
+            var timer3 =0;
+
+            function ustawSlajd(nrslajd) {
+                clearTimeout(timer1);
+                clearTimeout(timer2);
+                schowaj();
+                numer = nrslajd - 1;
+                timer3 = setTimeout("zmienSlajd()", 500);
+
+            }
+
+            function schowaj() {
+                $("#slider").stop(true,true);
+                $("#slider").fadeOut(500);
+            }
+
+            function zmienSlajd() {
+                clearTimeout(timer3);
+                numer++;
+                if (numer > 5)
+                    numer = 1;
+                var plik = "<img src=\"slider/slajd (" + numer + ").jpg\" />";
+                document.getElementById("slider").innerHTML = plik;
+                $("#slider").fadeIn(500);
+
+                timer1 = setTimeout("zmienSlajd()", 5000);
+                timer2 = setTimeout("schowaj()", 4500);
+            }
+
+        </script>
+    </head>
+    <body onload="zmienSlajd()">
+        <div>TODO write content</div>
+        <span onclick="ustawSlajd(1)" style="cursor: pointer">[1]</span> 
+        <span onclick="ustawSlajd(2)" style="cursor: pointer">[2]</span> 
+        <span onclick="ustawSlajd(3)" style="cursor: pointer">[3]</span> 
+        <span onclick="ustawSlajd(4)" style="cursor: pointer">[4]</span> 
+        <span onclick="ustawSlajd(5)" style="cursor: pointer">[5]</span> 
+
+        <div id="slider"></div>
+    </body>
+</html>
