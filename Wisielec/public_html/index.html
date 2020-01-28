@@ -10,6 +10,7 @@ and open the template in the editor.
   <title>Szubienica</title>
   <meta charset="UTF-8">
 
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" type="text/css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="szubienica.js"></script>
@@ -18,6 +19,11 @@ and open the template in the editor.
 
 <body>
   <div id="pojemnik">
+    <div id="wczytanieHasla">
+      <input type="text" id="nowe_Haslo" margin-left="300px" />
+      <br />
+      <input type="submit" id="przyciskWczytaj" value="Wczytaj" margin-left="300px" onclick="wczytajHaslo()" />
+    </div>
     <div id="plansza"></div>
     <div id="szubienica">
       <img src="img/s0.jpg" alt="" />
