@@ -60,6 +60,22 @@ c11.addEventListener('click', function() {
   revalCard(11)
 })
 
+var oneVisible = false
+var timeCounter = 0
+
 function revalCard(nr) {
-  alert(nr)
+  // alert(nr)
+
+  var obraz = 'url(img/' + cards[nr] + ')'
+  $('#c' + nr).css('background-image', obraz)
+  $('#c' + nr).addClass('cardActive')
+  $('#c' + nr).removeClass('card')
+
+  if (oneVisible == false) {
+    // first card
+    oneVisible = true
+  } else {
+    oneVisible = false
+    timeCounter++
+  }
 }
