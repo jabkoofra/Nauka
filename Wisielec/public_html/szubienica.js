@@ -23,7 +23,7 @@ function wczytajHaslo() {
       }
     }
     start()
-    document.getElementById('wczytanieHasla').style.visibility = 'hidden'
+    document.getElementById('wczytanieHasla').style.display = 'none'
     document.getElementById('wczytanieHasla').height = '1px'
   }
 }

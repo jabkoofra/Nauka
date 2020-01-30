@@ -62,6 +62,7 @@ c11.addEventListener('click', function() {
 
 var oneVisible = false
 var timeCounter = 0
+var visible_nr
 
 function revalCard(nr) {
   // alert(nr)
@@ -74,8 +75,23 @@ function revalCard(nr) {
   if (oneVisible == false) {
     // first card
     oneVisible = true
+    visible_nr = nr
   } else {
+    if (cards[nr] == cards[visible_nr]) {
+      // alert('para')
+      setTimeout(function() {
+        hide2Cards(nr, visible_nr)
+      }, 750)
+    } else {
+      alert('pudlo')
+    }
     oneVisible = false
     timeCounter++
+    $('.score').html('Turn counter: ' + timeCounter)
   }
+}
+
+function hide2Cards(arg1, arg2) {
+  $('#c' + arg1).css('opacity', '0')
+  $('#c' + arg2).css('opacity', '0')
 }
