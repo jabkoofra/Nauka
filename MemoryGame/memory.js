@@ -29,14 +29,14 @@ function startLoad() {
   })
 
   $('.board').append("<div class = 'score' > Turn counter: 0 </div>")
-  // nasluchiwacze()
-  nn()
+  nasluchiwacze()
+  // nn()
 }
 
 function nn() {
   for (i = 0; i < cards.length; i++) {
     $('#c' + i).click(function() {
-      revalCard(0)
+      revalCard(i)
     })
   }
 }
