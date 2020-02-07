@@ -25,7 +25,7 @@ function startLoad() {
   }
   $('.card').hide(1, function() {})
   $('.card').first().show(100, function showNext() {
-    $(this).next('.card').show(200, showNext)
+    $(this).next('.card').show(100, showNext)
   })
 
   $('.board').append("<div class = 'score' > Turn counter: 0 </div>")
